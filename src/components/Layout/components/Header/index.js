@@ -2,13 +2,16 @@ import styles from "./Header.module.scss";
 import classNames from "classnames/bind";
 import image from "~/assets/images";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {Wrapper as PopperWrapper} from '~/components/Popper'
+import { Wrapper as PopperWrapper } from "~/components/Popper";
 import { useEffect, useState } from "react";
-import AccountItem from '~/components/AccountItem';
+import AccountItem from "~/components/AccountItem";
+import Button from "~/components/Button";
+
 import {
   faCircleXmark,
   faSpinner,
   faMagnifyingGlass,
+  faSignIn,
 } from "@fortawesome/free-solid-svg-icons";
 import "tippy.js/dist/tippy.css"; // optional
 import Tippy from "@tippyjs/react/headless"; // different import path!
@@ -32,20 +35,18 @@ function Header() {
             interactive
             visible={searchResult.length > 0}
             render={(attributes) => (
-             
-                <div
-                  className={cx("search-result")}
-                  tabIndex="-1"
-                  {...attributes}
-                >
-                   <PopperWrapper>
-                    <h4 className={cx('search-title')}>Accounts</h4>
-                   <AccountItem />
-                   <AccountItem />
-                   <AccountItem />
-                  </PopperWrapper>
-                </div>
-             
+              <div
+                className={cx("search-result")}
+                tabIndex="-1"
+                {...attributes}
+              >
+                <PopperWrapper>
+                  <h4 className={cx("search-title")}>Accounts</h4>
+                  <AccountItem />
+                  <AccountItem />
+                  <AccountItem />
+                </PopperWrapper>
+              </div>
             )}
           >
             <input
@@ -63,7 +64,10 @@ function Header() {
             <FontAwesomeIcon icon={faMagnifyingGlass} />
           </button>
         </div>
-        <div className={cx("actions")}></div>
+        <div className={cx("actions")}>
+          <Button text>Upload</Button>
+          <Button primary rightIcon={ <FontAwesomeIcon icon={faSignIn} />}>Log in</Button>
+        </div>
       </div>
     </header>
   );
