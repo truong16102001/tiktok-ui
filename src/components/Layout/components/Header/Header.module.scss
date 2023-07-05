@@ -19,6 +19,7 @@
 .inner {
     height: 100%;
     width: var(--default-layout-width, 1150px);
+    padding: 0 var(--default-layout-horizontal-spacer);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -93,12 +94,33 @@
         cursor: pointer;
     }
 }
+//actions
+.actions{
+    display: flex;
+}
 
 .more-btn{
     font-size: 2rem;
     margin-left: 26px;
     background-color: transparent;
     padding: 4px 8px;
+    cursor: pointer;
+}
+
+.action-btn{
+    font-size: 2.3rem;
+    color: #161823;
+    padding: 4px 16px;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.user-avatar{
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-left: 12px;
     cursor: pointer;
 }
 
