@@ -7,6 +7,7 @@
     font-size: 1.6rem;
     font-weight: 700;
     background-color: white;
+    font-family: 'IBM Plex Sans', sans-serif;
     cursor: pointer;
     border: 1px solid transparent;
     user-select: none;
@@ -55,6 +56,25 @@
     }
 }
 
+.upload{
+    min-width: 110px;
+    padding: 5px 0;
+    height: 36px;
+    border: 1px solid rgba(22, 24, 35, 0.12);
+    border-radius: 2px;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+
+    &:hover{
+        background-color: rgba(22, 24, 35, .03);
+    }
+
+    .icon + .title{
+        margin-left: 0px;
+    }
+}
 .text {
 
     &:hover {
@@ -64,7 +84,7 @@
 
 
 .icon + .title, .title+ .icon{
-    margin-left: 8px;
+    margin-left: 7px;
 }
 
 .icon{
